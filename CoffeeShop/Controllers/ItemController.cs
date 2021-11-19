@@ -25,8 +25,7 @@ namespace CoffeeShop.Controllers
             return Ok(await _itemService.GetAllAsync());
         }
 
-        [HttpGet("{id:length(24)}")]
-        [ApiExplorerSettings(IgnoreApi =true)]
+        [HttpGet("{id:length(24)}")]        
         public async Task<IActionResult> Get(string id)
         {
             var item = await _itemService.GetByIdAsync(id);

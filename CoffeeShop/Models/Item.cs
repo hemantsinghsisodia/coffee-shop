@@ -15,9 +15,13 @@ namespace CoffeeShop.Models
 
         [BsonElement("Name")]
         public string Name { get; set; }
-
-        public decimal Price { get; set; }
-
         public string Category { get; set; }
+        public decimal Price { get; set; }
+        public decimal TaxPercent { get; set; }
+        public bool IsDiscountedWithOtherItem { get; set; }
+        public decimal DiscountPercent { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string OtherItemId { get; set; }
+
     }
 }
