@@ -65,7 +65,7 @@ namespace CoffeeShop.Controllers
             Random _random = new Random();
             await Task.Delay(_random.Next(2000, 5000)); //sleep for random seconds.
 
-            return Ok($"Your order is ready with Order No. \":{order.OrderNo}\". Hope you enjoy your food!");
+            return Ok($"Your order is ready with Order No. \"{order.OrderNo}\". Hope you enjoy your food!");
         }
 
         [HttpPut("{id:length(24)}")]
