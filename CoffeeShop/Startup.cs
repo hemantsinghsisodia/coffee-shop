@@ -35,6 +35,7 @@ namespace CoffeeShop
             });
             services.Configure<DbConfiguration>(Configuration.GetSection("DatabaseConn"));
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -25,7 +25,8 @@ namespace CoffeeShop.Controllers
             return Ok(await _itemService.GetAllAsync());
         }
 
-        [HttpGet("{id:length(24)}")]        
+        [HttpGet("{id:length(24)}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IActionResult> Get(string id)
         {
             var item = await _itemService.GetByIdAsync(id);
@@ -47,14 +48,14 @@ namespace CoffeeShop.Controllers
         }
         [HttpPut("{id:length(24)}")]
         [ApiExplorerSettings(IgnoreApi = true)]
-        public async Task<IActionResult> Update(string id, Item booksData)
+        public async Task<IActionResult> Update(string id, Item itemData)
         {
             var item = await _itemService.GetByIdAsync(id);
             if (item == null)
             {
                 return NotFound();
             }
-            await _itemService.UpdateAsync(id, booksData);
+            await _itemService.UpdateAsync(id, itemData);
             return NoContent();
         }
         [HttpDelete("{id:length(24)}")]
